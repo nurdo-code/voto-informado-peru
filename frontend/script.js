@@ -1,4 +1,5 @@
-const API_URL = 'http://127.0.0.1:8000';
+// Usar ruta relativa para producción. En Render o cualquier host, esto buscará en el mismo dominio.
+const API_URL = '';
 
 // DOM Elements
 const partiesView = document.getElementById('parties-view');
