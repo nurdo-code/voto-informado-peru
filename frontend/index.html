@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluador de Transparencia Pol&iacute;tica</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <h1>🔍 Transparencia Voto Perú</h1>
+            <p>Conoce los antecedentes de tus candidatos</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Start View: Parties Ranking -->
+        <section id="parties-view" class="view active">
+            <div class="view-header">
+                <h2>Ranking de Partidos Políticos</h2>
+                <button id="refresh-btn" class="btn primary">Actualizar Datos</button>
+            </div>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th width="50">#</th>
+                        <th width="60">Logo</th>
+                        <th>Partido Político</th>
+                        <th width="150">Puntaje Transparencia</th>
+                        <th width="120">Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="parties-list">
+                    <tr><td colspan="5" class="text-center">Cargando datos...</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Candidate View (per party) -->
+        <section id="candidates-view" class="view">
+            <div class="view-header">
+                <div>
+                    <button id="back-to-parties" class="btn secondary">← Volver al Ranking</button>
+                    <h2 id="party-name-title" class="mt-2">Candidatos de [Partido]</h2>
+                </div>
+            </div>
+            
+            <div id="candidates-container">
+                <div class="text-center">Cargando candidatos...</div>
+            </div>
+        </section>
+
+        <!-- Candidate Detail Modal -->
+        <div id="candidate-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="modal-candidate-name">Juan Perez</h2>
+                <div class="modal-score-box">
+                    <div id="modal-candidate-score" class="score-badge large">100</div>
+                    <span id="modal-candidate-news" class="news-badge large">0 noticias</span>
+                </div>
+                
+                <hr>
+                
+                <h3>Registro de Transparencia</h3>
+                <ul id="modal-reasons-list" class="reasons-list">
+                    <!-- Reasons will be injected here -->
+                </ul>
+                
+                <h3 class="mt-2">Noticias Relacionadas</h3>
+                <ul id="modal-articles-list" class="articles-list">
+                    <!-- Articles will be injected here -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

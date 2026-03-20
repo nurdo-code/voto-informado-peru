@@ -1,0 +1,15 @@
+# Entornos virtuales
+venv/
+env/
+__pycache__/
+
+# Archivo de variables de entorno con información sensible (¡OBLIGATORIO IGNORAR!)
+.env
+
+# ==========================================================
+# EXCEPCIONES IMPORTANTES
+# ==========================================================
+# NO IGNORAR archivos de base de datos SQLite (.db) 
+# Queremos subir la base de datos ya calculada 'transparency.db'
+!*.db
+!transparency.db
