@@ -42,6 +42,9 @@ body {
     padding: 1.5rem 0;
     margin-bottom: 2rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    min-width: 100vw;
+    box-sizing: border-box;
 }
 
 .navbar h1 {
@@ -294,6 +297,9 @@ hr {
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .cargo-title {
@@ -302,6 +308,9 @@ hr {
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--primary-color);
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Responsividad Móvil */
@@ -312,17 +321,38 @@ hr {
 }
 
 @media (max-width: 768px) {
+    /* 1. Achicar Textos Principales */
+    .navbar h1 { font-size: 1.3rem; margin-bottom: 0.2rem; }
+    .navbar p { font-size: 0.85rem; }
+    h2 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    h3, .cargo-title { font-size: 1.1rem; }
+
+    /* 2. Reordenar el Encabezado (Centrado y en Columna) */
+    .view-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.8rem;
+    }
+    
+    .view-header > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 3. Compactar la Tabla y los Botones drásticamente */
     .data-table th, .data-table td {
-        padding: 0.5rem;
+        padding: 0.35rem 0.5rem;
         font-size: 0.85rem;
     }
 
     .btn {
-        padding: 0.4rem 0.6rem;
+        padding: 0.35rem 0.5rem;
         font-size: 0.8rem;
     }
 
-    /* Ocultar la primera columna (#) */
+    /* Ocultar la primera columna (#) para ahorrar espacio horizontal */
     .data-table th:first-child,
     .data-table td:first-child {
         display: none;
