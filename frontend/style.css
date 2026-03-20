@@ -304,3 +304,28 @@ hr {
     border-bottom: 2px solid var(--primary-color);
 }
 
+/* Responsividad Móvil */
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+    .data-table th, .data-table td {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    /* Ocultar la primera columna (#) */
+    .data-table th:first-child,
+    .data-table td:first-child {
+        display: none;
+    }
+}
+

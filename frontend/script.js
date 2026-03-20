@@ -112,20 +112,22 @@ async function viewCandidates(partyId, partyName) {
 
             section.innerHTML = `
                 <h3 class="cargo-title">${cargo}</h3>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th width="50">#</th>
-                            <th>Candidato</th>
-                            <th width="150">Noticias Relevantes</th>
-                            <th width="120">Puntaje</th>
-                            <th width="120">Ver Detalle</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${rowsHtml}
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th width="50">#</th>
+                                <th>Candidato</th>
+                                <th width="150">Noticias Relevantes</th>
+                                <th width="120">Puntaje</th>
+                                <th width="120">Ver Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${rowsHtml}
+                        </tbody>
+                    </table>
+                </div>
             `;
             candidatesContainer.appendChild(section);
         }
